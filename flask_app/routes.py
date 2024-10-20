@@ -1,4 +1,6 @@
 from flask_app import app, db
+from bs4 import BeautifulSoup
+from selenium import webdriver
 
 @app.route("/")
 def index():
@@ -11,6 +13,7 @@ def getGameData():
 
     options = webdriver.ChromeOptions()
     options.add_argument('--headless')
+    options.add_argument('-no-sandbox')
     driver = webdriver.Chrome(options=options)
     driver.get(url)
     html = driver.page_source
