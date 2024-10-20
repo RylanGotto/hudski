@@ -13,7 +13,7 @@ def getGameData():
 
     options = webdriver.ChromeOptions()
     options.add_argument('--headless')
-    options.add_argument('-no-sandbox')
+    options.add_argument('-no-sandbox') # fix found here https://issues.chromium.org/issues/42323434#comment36
     driver = webdriver.Chrome(options=options)
     driver.get(url)
     html = driver.page_source
