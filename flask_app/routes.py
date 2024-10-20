@@ -39,7 +39,8 @@ def getGameData():
                 'rank': away_rank,
                 'team_name': i.find('li', class_='ScoreboardScoreCell__Item--away').find('div', class_='ScoreCell__TeamName').text,
                 'record': i.find('li', class_='ScoreboardScoreCell__Item--away').find('div', class_='ScoreboardScoreCell__RecordContainer').text,
-                'score': i.find('li', class_='ScoreboardScoreCell__Item--away').find('div', class_='ScoreCell__Score').text
+                'score': i.find('li', class_='ScoreboardScoreCell__Item--away').find('div', class_='ScoreCell__Score').text,
+                'team_href': i.find('li', class_='ScoreboardScoreCell__Item--away').find('a')['href']
 
             },
             'home': {
@@ -47,7 +48,8 @@ def getGameData():
                 'rank': home_rank,
                 'team_name': i.find('li', class_='ScoreboardScoreCell__Item--home').find('div', class_='ScoreCell__TeamName').text,
                 'record': i.find('li', class_='ScoreboardScoreCell__Item--home').find('div', class_='ScoreboardScoreCell__RecordContainer').text,
-                'score': i.find('li', class_='ScoreboardScoreCell__Item--home').find('div', class_='ScoreCell__Score').text
+                'score': i.find('li', class_='ScoreboardScoreCell__Item--home').find('div', class_='ScoreCell__Score').text,
+                'team_href': i.find('li', class_='ScoreboardScoreCell__Item--home').find('a')['href']
             },
         }
         score_cells.append(score_cell)
