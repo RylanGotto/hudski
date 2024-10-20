@@ -2,3 +2,5 @@ flask-sqlalchemy
 sqlalchemy
 flask-security
 flask-wtf
+beautifulsoup4==4.12.3
+selenium==4.25.0
